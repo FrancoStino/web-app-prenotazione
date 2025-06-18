@@ -15,6 +15,10 @@
     <section id="info-w">
       <div id="numero-persone-w">
         Persona: <span id="numero-persone">2</span>
+        <!-- Seleziona il numero di persone per prenotare il tuo tavolo -->
+        <a href="#" id="sub" class="btn">-</a>
+        <a href="#" id="add" class="btn">+</a>
+
       </div>
       <div>
         Tavolo selezionato: <span id="tavolo-selezionato">1</span>
@@ -31,6 +35,36 @@
       <div class="tavolo x4 libero">7</div>
       <div class="tavolo x6 libero">8</div>
     </section>
+
+    <p id="message-status"></p>
+
+    <form action="">
+      <div class="form-item">
+        <input type="text" name="nome" class="input" placeholder="Nome" required>
+      </div>
+      <div class="form-item">
+        <input type="text" name="cognome" class="input" placeholder="Cognome" required>
+      </div>
+      <div class="form-item">
+        <input type="email" name="email" class="input" placeholder="Email" required>
+      </div>
+      <!-- <div class="form-item">
+        <select name="tavolo" class="input">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+        </select>
+      </div> -->
+      <div class="form-item">
+        <input id="prenota" type="submit" value="PRENOTA" class="btn prenota">
+      </div>
+    </form>
+
   </main>
 
   <footer>
