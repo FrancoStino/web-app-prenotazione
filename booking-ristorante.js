@@ -8,6 +8,7 @@ Booking.numeroPersone = document.getElementById('numero-persone')
 Booking.tavoliW = document.getElementById('tavoli-w')
 
 
+
 Booking.tavoloSelezionato = document.getElementById('tavolo-selezionato')
 
 Booking.messageStatus = document.getElementById('message-status')
@@ -22,7 +23,7 @@ async function costruisciSala() {
 }
 
 function disponiTavoli(tavoli) {
-  tavoli.forEach(tavolo, i => {
+  tavoli.forEach((tavolo, i) => {
     let classiTavolo = 'tavolo',
       tavoloDOM = document.createElement('div');
     tavoloDOM.appendChild(document.createTextNode(i + 1));
