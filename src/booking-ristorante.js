@@ -1,4 +1,4 @@
-/* Gestione numeri persone da prenotare */
+/* Gestione selezione da prenotare */
 
 const Booking = {}
 
@@ -50,3 +50,20 @@ Booking.numeroPersoneW.addEventListener('click', function (e) {
   }
   Booking.numeroPersone.textContent = numeroPersone;
 });
+
+Booking.tavoliW.addEventListener('click', function (e) {
+  e.preventDefault()
+  let selezionato = parseInt(e.target.textContent);
+  console.log(selezionato)
+  if (Booking.tavoli[selezionato - 1].occupato) {
+    Booking.messageStatus.textContent = 'Il tavolo è già prenotato';
+  } else {
+    Booking.tavoloSelezionato.textContent = selezionato;
+  }
+});
+
+
+/* Gestione prenotazione */
+
+
+
