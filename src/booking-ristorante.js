@@ -65,3 +65,34 @@ Booking.tavoliW.addEventListener('click', function (e) {
 
 /* Submit prenotazione */
 
+document.forms[0].addEventListener('submit', function (e) {
+  e.preventDefault();
+  if (Booking.tavoloSelezionato.textContent == '') {
+    Booking.messageStatus.textContent = 'È necessario prenotare almeno un tavolo';
+    return
+  }
+  sendBooking();
+});
+
+function sendBooking() {
+  let bookingForm = new FormData(document.forms[0]);
+  bookingForm.append('nunero-persone', +Booking.numeroPersone.textContent);
+  bookingForm.append('tavolo', +Booking.numeroPersone.textContent);
+  bookingForm.append('nome', document.forms[0].nome.value);
+  bookingForm.append('cognome', document.forms[0].cognome.value);
+  bookingForm.append('email', document.forms[0].email.value);
+
+  Booking.messageStatus.textContent = 'Invio prenotazione...';
+
+  fetch('bookingScript', {
+    body: bookingForm,
+    method: 'POST'
+  }).then(response => {
+    if (response.ok) {
+      Booking.messageStatus.textContent = 'Prenotazione inviata con successo';
+      document.forms[0].reset();
+    } else {
+      Booking.messageStatus.textContent = 'Errore nell\'invio della prenotazione';
+    }
+  })
+}
