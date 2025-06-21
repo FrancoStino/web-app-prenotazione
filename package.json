@@ -5,7 +5,7 @@
   "main": "server.js",
   "type": "module",
   "scripts": {
-    "start": "node server.js & babel src --out-dir lib --watch",
+    "start": "node server.js & babel booking --out-dir lib --watch",
     "dev": "nodemon server.js",
     "build": "babel src --out-dir lib",
     "test": "echo \"Error: no test specified\" && exit 1"

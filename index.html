@@ -1,77 +1,67 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="css/style.css">
-	<title>Web app prenotazione ristorante</title>
-</head>
-<body>
-  <header>
-    <h1>Prenota il tuo tavolo</h1>
-  </header>
-
-  <main>
-    <section id="info-w">
-      <div id="numero-persone-w">
-        Persona: <span id="numero-persone">2</span>
-        <!-- Seleziona il numero di persone per prenotare il tuo tavolo -->
-        <a href="#" id="sub" class="btn">-</a>
-        <a href="#" id="add" class="btn">+</a>
-
-      </div>
-      <div>
-        Tavolo selezionato: <span id="tavolo-selezionato"></span>
-      </div>
-    </section>
-
-    <section id="tavoli-w">
-      <!-- <div class="tavolo x6 libero">1</div>
-      <div class="tavolo x4 libero">2</div>
-      <div class="tavolo x4 libero">3</div>
-      <div class="tavolo x6 occupato">4</div>
-      <div class="tavolo x6 libero">5</div>
-      <div class="tavolo x4 libero">6</div>
-      <div class="tavolo x4 occupato">7</div>
-      <div class="tavolo x6 libero">8</div> -->
-    </section>
-
-    <p id="message-status"></p>
-
-    <form action="">
-      <div class="form-item">
-        <input type="text" name="nome" class="input" placeholder="Nome" required>
-      </div>
-      <div class="form-item">
-        <input type="text" name="cognome" class="input" placeholder="Cognome" required>
-      </div>
-      <div class="form-item">
-        <input type="email" name="email" class="input" placeholder="Email" required>
-      </div>
-      <!-- <div class="form-item">
-        <select name="tavolo" class="input">
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-          <option value="6">6</option>
-          <option value="7">7</option>
-          <option value="8">8</option>
-        </select>
-      </div> -->
-      <div class="form-item">
-        <input id="prenota" type="submit" value="PRENOTA" class="btn prenota">
-      </div>
-    </form>
-
-  </main>
-
-  <footer>
-
-  </footer>
+<html>
+    <head>
+        <title>Booking Ristorante</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="booking/stile.css">
+    </head>
+    <body>
+        <main>
+            <div id="left">
+                <h3>Prenota il tuo tavolo</h3>
+                <section id="info-w">
+                    <div id="numero-persone-w">
+                        <a href="#" id="sub" class="btn">-</a> &nbsp;
+                        <span id="numero-persone" class="green-f-big">2</span> persone &nbsp;
+                        <a href="#" id="add" class="btn">+</a>
+                    </div>
+                </section>
 
 
-  <script type="module" src="src/booking-ristorante.js"></script>
-</body>
+
+                <section id="section-tavoli-w">
+                    <p>seleziona tavolo</p>
+                </section>
+
+                <p id="message-status"></p>
+
+                <form>
+                    <!--<div class="form-item-multi">
+                        <div class="form-item">
+                            <input type="text" id="giorno" name="giorno" class="input" placeholder=" " required>
+                            <label for="giorno" class="label">gg/mm</label>
+                        </div>
+                        <div class="form-item">
+                            <input type="text" name="nome" class="input" placeholder=" " required>
+                            <label for="nome" class="label">ore</label>
+                        </div>
+                    </div>-->
+                    <div class="form-item">
+                        <input type="text" name="nome" class="input" placeholder=" " required>
+                        <label for="nome" class="label">Nome</label>
+                    </div>
+                    <div class="form-item">
+                        <input type="email" name="email" class="input" placeholder=" " required>
+                        <label for="email" class="label">Email</label>
+                    </div>
+                    <div>
+                        <input type="submit" id="prenota" class="btn prenota" value="PRENOTA">
+                    </div>
+                </form>
+            </div>
+
+            <div id="right">
+                <div id="riquadro"></div>
+            </div>
+        </main>
+
+
+        <script type="module">
+            import BookingApp from './booking/booking.js';
+            document.addEventListener('DOMContentLoaded', () => {
+               BookingApp();
+            });
+        </script>
+    </body>
 </html>
