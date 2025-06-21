@@ -64,3 +64,4 @@ Booking.tavoliW.addEventListener('click', function (e) {
 
 
 /* Submit prenotazione */
+
