@@ -1,3 +1,5 @@
+/* Gestione numeri persone da prenotare */
+
 const Booking = {}
 
 
@@ -22,6 +24,9 @@ async function costruisciSala() {
   disponiTavoli(Booking.tavoli);
 }
 
+costruisciSala()
+
+
 function disponiTavoli(tavoli) {
   tavoli.forEach((tavolo, i) => {
     let classiTavolo = 'tavolo',
@@ -34,4 +39,14 @@ function disponiTavoli(tavoli) {
   })
 }
 
-costruisciSala()
+Booking.numeroPersoneW.addEventListener('click', function (e) {
+  e.preventDefault()
+  let numeroPersone = parseInt(Booking.numeroPersone.textContent);
+  console.log(numeroPersone)
+  if (e.target.id == 'add') {
+    numeroPersone++;
+  } else if ((e.target.id == 'sub' && numeroPersone > 1)) {
+    numeroPersone--;
+  }
+  Booking.numeroPersone.textContent = numeroPersone;
+});
